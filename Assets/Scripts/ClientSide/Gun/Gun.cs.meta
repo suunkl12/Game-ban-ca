@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba9d98bd851607349ac7dc9897f40b98
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - game_Manager: {instanceID: 0}
+  - projectile: {instanceID: 0}
+  - firePoint: {instanceID: 0}
+  - listener: {fileID: 11400000, guid: 7934af4df273b034a9e35546c166dfd7, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
