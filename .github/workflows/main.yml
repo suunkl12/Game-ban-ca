@@ -50,7 +50,7 @@ jobs:
             Library-${{ matrix.projectPath }}-
             Library-
       - name: Run tests
-      - uses: game-ci/unity-test-runner@v2
+        uses: game-ci/unity-test-runner@v2
         id: testRunner
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -59,7 +59,8 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
       #Upload test results
-      - uses: actions/upload-artifact@v2
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: Test results (all modes)
@@ -76,7 +77,8 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
           customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
       #Upload build
-      - uses: actions/upload-artifact@v2
+      - name: upload build
+        uses: actions/upload-artifact@v2
         with:
           name: Build
           path: build
