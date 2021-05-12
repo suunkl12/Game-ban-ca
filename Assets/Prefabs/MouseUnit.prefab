@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  animator: {fileID: 272218641057793323}
+  animator: {fileID: 0}
   speed: 3
   tempTrans: {fileID: 0}
   tmpX: 0

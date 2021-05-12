@@ -1017,7 +1017,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1070,7 +1070,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -4709,6 +4709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6037ee80c93fb9a4c94f4b8e171b465b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &5361020879281797266
 MonoBehaviour:
   m_ObjectHideFlags: 0
