@@ -26,11 +26,11 @@ jobs:
           projectPath:
             - test-project
           unityVersion:
-                - 2019.4.12f1
+            - 2019.4.12f1
           targetPlatform:
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - Android # Build an Android player.
+            - StandaloneWindows64 # Build a Windows 64-bit standalone.
+            - StandaloneLinux64 # Build a Linux 64-bit standalone.
+            - Android # Build an Android player.
             
             
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -49,37 +49,19 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v2
-        id: testRunner
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          projectPath: ${{ matrix.projectPath }}
-          unityVersion: ${{ matrix.unityVersion }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-      #Upload test results
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: Test results (all modes)
-          path: ${{ steps.testRunner.outputs.artifactsPath }}
-          
       #Build    
       - name: Build project
         uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
+          #customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
       #Upload build
       - name: upload build
         uses: actions/upload-artifact@v2
         with:
-          name: Build
-          path: build
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
 
