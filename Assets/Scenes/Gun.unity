@@ -1130,6 +1130,7 @@ MonoBehaviour:
   - {fileID: 7774444658164420176, guid: 303eb29ebb6d39643a7685008aa82a4c, type: 3}
   - {fileID: 1097587128324327637, guid: d75360fb1f65d6146aa2c5817156ad5a, type: 3}
   - {fileID: 272218641057793322, guid: 77fdf72feb6c3a94d9743e4ff800c6b1, type: 3}
+  - {fileID: 999119668642423381, guid: d379b0529db0b16469ebf1c68267d834, type: 3}
   gameEvent: {fileID: 11400000, guid: 7934af4df273b034a9e35546c166dfd7, type: 2}
 --- !u!4 &514316445 stripped
 Transform:
