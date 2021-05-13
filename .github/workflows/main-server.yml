@@ -56,7 +56,7 @@ jobs:
         with:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: '-batchmode -nographics'
+          customParameters: '-nographics'
       #Upload build
       - name: upload build
         uses: actions/upload-artifact@v2
