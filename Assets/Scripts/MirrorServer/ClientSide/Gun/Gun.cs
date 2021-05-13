@@ -43,7 +43,7 @@ public class Gun : NetworkBehaviour
     // Update is called once per frame
     void Update()
 
-    {   if (isServer){
+    {   if (isServer||!hasAuthority){
             return;
         }
         if (game_Manager.playerIn == this && Input.touchCount > 0)

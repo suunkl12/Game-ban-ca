@@ -9,6 +9,7 @@ public class GameEvent : ScriptableObject
 
 
     public event UnityAction<NetworkConnection> OnConnect = delegate { };
+
     public void OnConnectAssignGunCmd(NetworkIdentity target)
     {
         //Command
