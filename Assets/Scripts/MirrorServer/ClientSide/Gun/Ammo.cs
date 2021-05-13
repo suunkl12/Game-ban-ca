@@ -39,9 +39,12 @@ public class Ammo : NetworkBehaviour, ITakeDamage
         if (!isServer)
             return;
         spriteRenderer.sprite = null;
-        
-        EffectExplotion.SetActive(true);
-        playEffect();
+
+        if (EffectExplotion != null)
+        {
+            EffectExplotion.SetActive(true);
+            PlayEffect();
+        }
         if(other.gameObject.CompareTag("Animal"))
         {
             rb.velocity = transform.position*0;
@@ -53,7 +56,7 @@ public class Ammo : NetworkBehaviour, ITakeDamage
     }
 
     [ClientRpc]
-    public void playEffect()
+    public void PlayEffect()
     {
         EffectExplotion.SetActive(true);
     }
