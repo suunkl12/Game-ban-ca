@@ -67,24 +67,27 @@ public class CanvasControl : NetworkBehaviour
 
     public void Display()
     {
-        if (!isLocalPlayer)
-            return;
+        //if (!isLocalPlayer)
+        //    return;
+        //else
+        //{
+            //Hiển thị số lượng đạn
+            bulletAmountTxt.text = game_Manager.playerIn.BulletAmount.ToString();
 
 
-        //Hiển thị số lượng đạn
-        bulletAmountTxt.text = game_Manager.playerIn.BulletAmount.ToString();
+            //Hiển thị vị trí người chơi
 
-
-        //Hiển thị vị trí người chơi
-
-        for (int i = 0; i < slotGun.Length; i++)
-        {
-            if (slotGun[i] == game_Manager.playerIn)
+            for (int i = 0; i < slotGun.Length; i++)
             {
-                urh[i].SetActive(true);
+                if (slotGun[i] == game_Manager.playerIn)
+                {
+                    urh[i].SetActive(true);
+                }
+                else
+                    urh[i].SetActive(false);
             }
-            else
-                urh[i].SetActive(false);
-        }
+        //}
+
+
     }    
 }

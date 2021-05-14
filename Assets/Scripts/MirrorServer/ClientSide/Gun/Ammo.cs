@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-public class Ammo : NetworkBehaviour, ITakeDamage
+public class Ammo : NetworkBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
+    public GameObject playerFrom;
     private Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
-
+    public int damage;
     public GameObject EffectExplotion;
 
     float speedRotate = 500f;
@@ -28,33 +29,17 @@ public class Ammo : NetworkBehaviour, ITakeDamage
         Destroy(gameObject);
     }
 
-    public void TakeDamage(int damage)
-    {
-        throw new System.NotImplementedException();
-    }
 
     [ServerCallback]
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isServer)
-            return;
-        spriteRenderer.sprite = null;
-
-        if (EffectExplotion != null)
+        EffectExplotion.transform.parent = null;
+        if(other.CompareTag("Animal") && other.isTrigger)
         {
-            EffectExplotion.SetActive(true);
-            PlayEffect();
+            other.GetComponent<AnimalHealth>().TakeDamage(playerFrom, damage);
+            Debug.Log(damage);
         }
-        if(other.gameObject.CompareTag("Animal"))
-        {
-            rb.velocity = transform.position*0;
-            Animator ani = other.GetComponent<Animator>();
-            ani.SetBool("Dead", true);
-            other.GetComponent<CircleCollider2D>().enabled = false;
-            Destroy(this.gameObject,0.2f);
-        }    
     }
-
     [ClientRpc]
     public void PlayEffect()
     {

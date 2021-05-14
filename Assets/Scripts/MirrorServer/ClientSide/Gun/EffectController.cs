@@ -5,9 +5,11 @@ using Mirror;
 public class EffectController : NetworkBehaviour
 {
     // Start is called before the first frame update    GameObject smokePuff;
+    public Ammo ammo;
     public GameObject Effect;
     void Start()
     {
+        ammo.GetComponentInParent<Ammo>();
     }
 
     // Update is called once per frame
@@ -17,12 +19,10 @@ public class EffectController : NetworkBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Effect.transform.parent = null;
-        if(other.gameObject.CompareTag("Animal"))
+        if(other.CompareTag("Animal") && other.isTrigger)
         {
-            Animator ani = other.GetComponent<Animator>();
-            ani.SetBool("Dead", true);
-            other.GetComponent<CircleCollider2D>().enabled = false;
-        }    
+            other.GetComponent<AnimalHealth>().TakeDamage(ammo.playerFrom, ammo.damage);
+            Debug.Log(ammo.damage);
+        }
     }
 }

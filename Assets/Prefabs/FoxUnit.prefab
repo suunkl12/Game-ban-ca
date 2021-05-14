@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6035744930154281224}
   - component: {fileID: 4650169932069308503}
   - component: {fileID: 4257040551529141300}
+  - component: {fileID: 7943765457971309561}
   m_Layer: 0
   m_Name: FoxUnit
   m_TagString: Animal
@@ -242,6 +243,21 @@ MonoBehaviour:
   syncInterval: 0.1
   clientAuthority: 0
   animator: {fileID: 442080103005230314}
+--- !u!114 &7943765457971309561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907297177702584556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b511b4f1c18666408bbbd41c5bf4ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 80
+  currentHealth: 0
+  score: 25
 --- !u!1001 &95678816512057881
 PrefabInstance:
   m_ObjectHideFlags: 0

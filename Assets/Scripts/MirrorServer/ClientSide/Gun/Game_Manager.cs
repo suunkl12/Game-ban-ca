@@ -6,10 +6,11 @@ using Mirror;
 public class Game_Manager : NetworkBehaviour
 {
     public GameObject GunContainer;
-
     public Gun[] slotGun;
-
+    public int level = 1;
     public Gun playerIn;
+    public int Score = 0;
+
 
     public GameEvent gameEvent;
 
@@ -23,6 +24,7 @@ public class Game_Manager : NetworkBehaviour
         {
             slotGun[i] = GunContainer.gameObject.transform.GetChild(i).gameObject.GetComponent<Gun>();
         }
+
     }
 
     void setSlot()

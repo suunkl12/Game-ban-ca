@@ -16,7 +16,9 @@ public class Gun : NetworkBehaviour
     public GameObject gunGraphic;
     public GameObject[] guns;
     public int level = 1;
-
+    public int damage;
+    [SyncVar]
+    public int Score = 0;
     [SyncVar]
     private int bulletAmount;
     public int maxBulletAmount;
@@ -50,16 +52,27 @@ public class Gun : NetworkBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //Nếu như mất authority, sẽ có khả năng là cây súng sẽ tiếp tục chạy animtion bắn,
-        //lệnh này để server fix vụ đó
-        if (isServer&&!hasAuthority){
-            ani.SetBool("shoot", false);
-        }
-
+    {   
         if (isServer||!hasAuthority){
             return;
         }
+
+        switch (level) {
+            case 1:
+                damage = 50;
+                break;
+            case 2:
+                damage = 65;
+                break;
+            case 3:
+                damage = 80;
+                break;
+            case 4:
+                damage = 95;
+                break;
+        }
+
+
         if (game_Manager.playerIn == this && Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved)
@@ -70,7 +83,6 @@ public class Gun : NetworkBehaviour
                     if (bulletAmount <= 0)
                         Debug.LogWarning("There is no bullet left to fire");
                     CmdShoot(touchPos);
-                    
                 }
             }
         }
@@ -102,9 +114,12 @@ public class Gun : NetworkBehaviour
             Vector2 firedir = touchPos - (new Vector2(firePoint.position.x, firePoint.position.y));
             firedir.Normalize();
             GameObject bullet_ = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+            bullet_.GetComponent<Ammo>().playerFrom = this.gameObject;
+            bullet_.GetComponent<Ammo>().damage = damage;
             NetworkServer.Spawn(bullet_);
             bullet_.GetComponent<Rigidbody2D>().velocity = firedir * bulletSpeed;
             bulletAmount--;
+            Debug.Log("from " + bullet_.GetComponent<Ammo>().playerFrom + " with damage = " + bullet_.GetComponent<Ammo>().damage);
         }
     }
 
@@ -118,6 +133,8 @@ public class Gun : NetworkBehaviour
     {
         inUsed = false;
         bulletAmount = maxBulletAmount;
+        Score = 0;
+        level = 1;
     }
 
     public void RotateGun(float rotation)

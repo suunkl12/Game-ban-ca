@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2163665238501758064}
   - component: {fileID: -5171145326818270290}
   - component: {fileID: 1787466562318200183}
+  - component: {fileID: 7116250082261354255}
   m_Layer: 0
   m_Name: RabbitUnit
   m_TagString: Animal
@@ -242,6 +243,21 @@ MonoBehaviour:
   syncInterval: 0.1
   clientAuthority: 0
   animator: {fileID: 7823071267598780217}
+--- !u!114 &7116250082261354255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825390370729200569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b511b4f1c18666408bbbd41c5bf4ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 110
+  currentHealth: 0
+  score: 45
 --- !u!1001 &2561966081021116984
 PrefabInstance:
   m_ObjectHideFlags: 0
