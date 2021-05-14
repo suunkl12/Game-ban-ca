@@ -56,7 +56,7 @@ jobs:
         with:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildMethod: BuildScript.Build
+          buildMethod: UnityBuilderAction.BuildScript.Build
       #Upload build
       - name: upload build
         uses: actions/upload-artifact@v2
