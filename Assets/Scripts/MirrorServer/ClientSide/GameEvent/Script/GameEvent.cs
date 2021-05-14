@@ -16,12 +16,12 @@ public class GameEvent : ScriptableObject
         OnConnect?.Invoke(target.connectionToClient);
     }
 
-    public event UnityAction OnDisconnect = delegate { };
+    public event UnityAction<NetworkConnection> OnDisconnect = delegate { };
     public UnityAction<int> SetGunNotInUsed;
-    public void OnDisconnectTakeGunBackCmd()
+    public void OnDisconnectTakeGunBackCmd(NetworkConnection clientConnection)
     {
         //Command
-        OnDisconnect?.Invoke();
+        OnDisconnect?.Invoke(clientConnection);
     }
 
     

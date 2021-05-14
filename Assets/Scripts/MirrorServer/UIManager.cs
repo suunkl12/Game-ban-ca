@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
         gameEvent.OnDisconnect += EnableConnectButton;
         gameEvent.OnConnect += DisableConnectButton;
     }
-    public void EnableConnectButton()
+    public void EnableConnectButton(NetworkConnection networkConnection)
     {
         connectButton.gameObject.SetActive(true);
     }

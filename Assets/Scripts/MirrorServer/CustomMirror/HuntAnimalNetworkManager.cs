@@ -157,6 +157,7 @@ public class HuntAnimalNetworkManager : NetworkManager
     /// <param name="conn">Connection from client.</param>
     public override void OnServerDisconnect(NetworkConnection conn)
     {
+        gameEvent.OnDisconnectTakeGunBackCmd(conn);
         base.OnServerDisconnect(conn);
 
     }
@@ -232,7 +233,7 @@ public class HuntAnimalNetworkManager : NetworkManager
     /// </summary>
     public override void OnStopClient() 
     {
-        gameEvent.OnDisconnectTakeGunBackCmd();
+        
     }
 
     #endregion

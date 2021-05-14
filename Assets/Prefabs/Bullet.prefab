@@ -252,6 +252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXM_Explosion
       objectReference: {fileID: 0}
+    - target: {fileID: 4990435139549699450, guid: a117cf640799c9e49a8a6a545735db6b,
+        type: 3}
+      propertyPath: Effect
+      value: 
+      objectReference: {fileID: 7508080519562260074}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a117cf640799c9e49a8a6a545735db6b, type: 3}
 --- !u!1 &7508080519562260074 stripped

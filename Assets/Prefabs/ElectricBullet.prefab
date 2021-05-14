@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  Effect: {fileID: 3740496290698955166}
 --- !u!114 &6296020150310715580
 MonoBehaviour:
   m_ObjectHideFlags: 0

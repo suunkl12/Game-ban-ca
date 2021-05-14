@@ -1,4 +1,5 @@
 ﻿using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class Player : NetworkBehaviour
     void Start()
     {
         gameEvent.OnAssignGun += TargetAssignAuthority;
-        gameEvent.OnDisconnect += ReturnGunBackCmd;
+        gameEvent.OnAssignGun += AssignGunIndex;
+        gameEvent.OnDisconnect += TakeGunAuthorityBack;
         gameEvent.OnDisconnect += SetGunNotInUsed;
         //Muốn tìm child thì phải thêm têm parent
         if (!isLocalPlayer)
@@ -23,24 +25,43 @@ public class Player : NetworkBehaviour
         CmdOnConnectAssignGun(GetComponent<NetworkIdentity>());
     }
 
+    //Set index của gun on server
+    private void AssignGunIndex(NetworkConnection target, int index)
+    {
+        currentIndex = index;
+    }
+
+
     [TargetRpc]
     public void TargetAssignAuthority(NetworkConnection target, int index)
     {
         currentIndex = index;
         Debug.Log("Gun Container/Gun Pivot (" + (index + 1) + ")");
+        // Set indentity của súng trên client
         gunIdentity = GameObject.Find("Gun Container/Gun Pivot (" + (index + 1) + ")").GetComponent<NetworkIdentity>();
         CmdSetAuthority(gunIdentity);
         
     }
 
-    public void ReturnGunBackCmd()
+    public void TakeGunAuthorityBack(NetworkConnection clientConnection)
     {
-        CmdRemoveAuthority(gunIdentity);
+        try
+        {
+            Debug.Log("Revoked identity");
+            //NetworkConnection a;
+            //a.identity
+            if(clientConnection.identity == GetComponent<NetworkIdentity>())
+            gunIdentity.RemoveClientAuthority();
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
     }
     
-    public void SetGunNotInUsed()
+    public void SetGunNotInUsed(NetworkConnection clientConnection)
     {
-        CmdSetGunNotInUse(currentIndex);
+        gameEvent.SetGunNotInUsed?.Invoke(currentIndex);
     }
 
     [Command]
@@ -53,15 +74,11 @@ public class Player : NetworkBehaviour
     void CmdSetAuthority(NetworkIdentity networkIdentity)
     {
         Debug.Log("Assigned identity");
-        networkIdentity.AssignClientAuthority(connectionToClient);
-    }
 
-    [Command]
-    void CmdRemoveAuthority(NetworkIdentity networkIdentity)
-    {
-        Debug.Log("Revoked identity");
-        
-        networkIdentity.RemoveClientAuthority();
+        // Set indentity của súng trên server
+        gunIdentity = networkIdentity;
+
+        networkIdentity.AssignClientAuthority(connectionToClient);
     }
 
     [Command]

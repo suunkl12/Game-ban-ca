@@ -50,8 +50,14 @@ public class Gun : NetworkBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        //Nếu như mất authority, sẽ có khả năng là cây súng sẽ tiếp tục chạy animtion bắn,
+        //lệnh này để server fix vụ đó
+        if (isServer&&!hasAuthority){
+            ani.SetBool("shoot", false);
+        }
 
-    {   if (isServer||!hasAuthority){
+        if (isServer||!hasAuthority){
             return;
         }
         if (game_Manager.playerIn == this && Input.touchCount > 0)
@@ -64,6 +70,7 @@ public class Gun : NetworkBehaviour
                     if (bulletAmount <= 0)
                         Debug.LogWarning("There is no bullet left to fire");
                     CmdShoot(touchPos);
+                    
                 }
             }
         }

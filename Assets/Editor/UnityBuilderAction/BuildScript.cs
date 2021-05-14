@@ -138,7 +138,7 @@ namespace UnityBuilderAction
                 target = buildTarget,
                 //                targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget),
                 locationPathName = filePath,
-                options = BuildOptions.Development
+                options = BuildOptions.EnableHeadlessMode
             };
 
             BuildSummary buildSummary = BuildPipeline.BuildPlayer(buildPlayerOptions).summary;
