@@ -13,10 +13,12 @@ public class Gun : NetworkBehaviour
     public float bulletSpeed;
     public Transform firePoint;
     Rigidbody2D rb2d;
+    public GameObject gunGraphic;
+    public GameObject[] guns;
+    public int level = 1;
 
     [SyncVar]
     private int bulletAmount;
-
     public int maxBulletAmount;
     //float speedRotate = 5f;
     public float fireRate = 0.1f;
@@ -37,6 +39,12 @@ public class Gun : NetworkBehaviour
         }
         rb2d = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+
+        guns = new GameObject[gunGraphic.transform.childCount];
+        for (int i = 0; i < gunGraphic.transform.childCount; i++)
+        {
+            guns[i] = gunGraphic.transform.GetChild(i).gameObject;
+        }
 
     }
 

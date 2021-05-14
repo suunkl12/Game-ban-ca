@@ -158,6 +158,7 @@ public class HuntAnimalNetworkManager : NetworkManager
     public override void OnServerDisconnect(NetworkConnection conn)
     {
         base.OnServerDisconnect(conn);
+
     }
 
     #endregion
