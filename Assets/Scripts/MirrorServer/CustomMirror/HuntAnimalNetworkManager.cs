@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using Mirror;
-
+﻿using Mirror;
+using TMPro;
 /*
 	Documentation: https://mirror-networking.com/docs/Components/NetworkManager.html
 	API Reference: https://mirror-networking.com/docs/api/Mirror.NetworkManager.html
@@ -157,7 +155,7 @@ public class HuntAnimalNetworkManager : NetworkManager
     /// <param name="conn">Connection from client.</param>
     public override void OnServerDisconnect(NetworkConnection conn)
     {
-        gameEvent.OnDisconnectTakeGunBackCmd(conn);
+        gameEvent.OnDisconnectTakeGunBack_EnableConnectButton(conn);
         base.OnServerDisconnect(conn);
 
     }
@@ -183,6 +181,7 @@ public class HuntAnimalNetworkManager : NetworkManager
     /// <param name="conn">Connection to the server.</param>
     public override void OnClientDisconnect(NetworkConnection conn)
     {
+        gameEvent.OnDisconnectTakeGunBack_EnableConnectButton(conn);
         base.OnClientDisconnect(conn);
     }
 
@@ -237,4 +236,9 @@ public class HuntAnimalNetworkManager : NetworkManager
     }
 
     #endregion
+
+    public void ChangeIpAddress(TextMeshProUGUI text  )
+    {
+        networkAddress = text.text;
+    }
 }

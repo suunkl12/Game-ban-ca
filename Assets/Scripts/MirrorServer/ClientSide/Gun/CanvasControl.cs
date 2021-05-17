@@ -67,13 +67,16 @@ public class CanvasControl : NetworkBehaviour
 
     public void Display()
     {
-        //if (!isLocalPlayer)
-        //    return;
-        //else
-        //{
+
+        //Nếu như không phải người chơi trên máy,không hiện đạn
+        if (!isLocalPlayer)
+            return;
+        else
+        {
             //Hiển thị số lượng đạn
             bulletAmountTxt.text = game_Manager.playerIn.BulletAmount.ToString();
-
+            //Hiển thị số điểm
+            //ScoreTxt.text = game_Manager.playerIn.Score.ToString();
 
             //Hiển thị vị trí người chơi
 
@@ -86,7 +89,7 @@ public class CanvasControl : NetworkBehaviour
                 else
                     urh[i].SetActive(false);
             }
-        //}
+        }
 
 
     }    

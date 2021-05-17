@@ -17,8 +17,8 @@ public class Player : NetworkBehaviour
     {
         gameEvent.OnAssignGun += TargetAssignAuthority;
         gameEvent.OnAssignGun += AssignGunIndex;
-        gameEvent.OnDisconnect += TakeGunAuthorityBack;
-        gameEvent.OnDisconnect += SetGunNotInUsed;
+        gameEvent.OnDisconnect += TakeGunAuthorityBackSv;
+        gameEvent.OnDisconnect += SetGunNotInUsedSv;
         //Muốn tìm child thì phải thêm têm parent
         if (!isLocalPlayer)
             return;
@@ -43,7 +43,8 @@ public class Player : NetworkBehaviour
         
     }
 
-    public void TakeGunAuthorityBack(NetworkConnection clientConnection)
+    [ServerCallback]
+    public void TakeGunAuthorityBackSv(NetworkConnection clientConnection)
     {
         try
         {
@@ -58,8 +59,8 @@ public class Player : NetworkBehaviour
             Debug.Log(ex.Message);
         }
     }
-    
-    public void SetGunNotInUsed(NetworkConnection clientConnection)
+    [ServerCallback]
+    public void SetGunNotInUsedSv(NetworkConnection clientConnection)
     {
         gameEvent.SetGunNotInUsed?.Invoke(currentIndex);
     }

@@ -18,7 +18,7 @@ public class GameEvent : ScriptableObject
 
     public event UnityAction<NetworkConnection> OnDisconnect = delegate { };
     public UnityAction<int> SetGunNotInUsed;
-    public void OnDisconnectTakeGunBackCmd(NetworkConnection clientConnection)
+    public void OnDisconnectTakeGunBack_EnableConnectButton(NetworkConnection clientConnection)
     {
         //Command
         OnDisconnect?.Invoke(clientConnection);

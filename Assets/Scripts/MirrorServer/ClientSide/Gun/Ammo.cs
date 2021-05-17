@@ -33,12 +33,16 @@ public class Ammo : NetworkBehaviour
     [ServerCallback]
     private void OnTriggerEnter2D(Collider2D other)
     {
-        EffectExplotion.transform.parent = null;
+        if(EffectExplotion != null)
+            EffectExplotion.transform.parent = null;
+
         if(other.CompareTag("Animal") && other.isTrigger)
         {
             other.GetComponent<AnimalHealth>().TakeDamage(playerFrom, damage);
             Debug.Log(damage);
+            //Destroy(other.gameObject);
         }
+        Destroy(gameObject);
     }
     [ClientRpc]
     public void PlayEffect()

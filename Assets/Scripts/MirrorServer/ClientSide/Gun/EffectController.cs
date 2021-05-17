@@ -9,7 +9,7 @@ public class EffectController : NetworkBehaviour
     public GameObject Effect;
     void Start()
     {
-        ammo.GetComponentInParent<Ammo>();
+        ammo = GetComponentInParent<Ammo>();
     }
 
     // Update is called once per frame
