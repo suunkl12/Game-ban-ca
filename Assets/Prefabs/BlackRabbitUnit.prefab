@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8901180620115003330}
   - component: {fileID: 6754797140869558300}
   - component: {fileID: 9029684066077949637}
+  - component: {fileID: 7750554388482780509}
   m_Layer: 0
   m_Name: BlackRabbitUnit
   m_TagString: Animal
@@ -242,6 +243,21 @@ MonoBehaviour:
   syncInterval: 0.1
   clientAuthority: 0
   animator: {fileID: 653192721309340811}
+--- !u!114 &7750554388482780509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304628356714223627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b511b4f1c18666408bbbd41c5bf4ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 90
+  currentHealth: 0
+  score: 30
 --- !u!1001 &373827339999290348
 PrefabInstance:
   m_ObjectHideFlags: 0

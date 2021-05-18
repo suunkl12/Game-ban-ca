@@ -336,6 +336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1419545824171296358, guid: f17a94548720a524a81a0cb4e390800f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1419545824171296359, guid: f17a94548720a524a81a0cb4e390800f,
         type: 3}
       propertyPath: AnimalUnit.Array.size
@@ -443,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419545824171296358, guid: f17a94548720a524a81a0cb4e390800f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1419545824171296359, guid: f17a94548720a524a81a0cb4e390800f,
         type: 3}
@@ -581,6 +591,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419545824171296358, guid: f17a94548720a524a81a0cb4e390800f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1419545824171296359, guid: f17a94548720a524a81a0cb4e390800f,
         type: 3}
@@ -952,6 +967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419545824171296358, guid: f17a94548720a524a81a0cb4e390800f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1419545824171296359, guid: f17a94548720a524a81a0cb4e390800f,
         type: 3}

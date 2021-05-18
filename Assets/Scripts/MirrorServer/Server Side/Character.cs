@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : NetworkBehaviour,ITakeDamage
+public class Character : NetworkBehaviour
 {
     int health = 50;
     public void TakeDamage(int damage)

@@ -105,6 +105,10 @@ public class AnimalController : NetworkBehaviour
         }
 
     }
+    private void OnDestroy()
+    {
+        
+    }
     public void Dead(){
         Destroy(gameObject);
     }

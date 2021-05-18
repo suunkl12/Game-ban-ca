@@ -977,6 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453663283}
   - component: {fileID: 453663284}
+  - component: {fileID: 453663285}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -1010,6 +1011,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df7adfb96d79c741b49d4e788c3200d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connected: 0
+--- !u!114 &453663285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453663282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7680e2126187a104caa9a8a28fd53c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  when: 0
+  player: {fileID: 0}
+  blood: {fileID: 0}
+  bullet: {fileID: 0}
+  cartridge: {fileID: 0}
+  connected: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

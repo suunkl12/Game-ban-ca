@@ -22,15 +22,15 @@ public class NetworkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        IPAddress mIp = IPAddress.Parse(ip);
-        IpTCP = new IPEndPoint(mIp, 26000);
-        instance = this;
-        tcp = new TcpClient();
-        tcp.NoDelay = true;
-        Debug.Log("Connecting...");
-        tcp.Connect(IpTCP);
-        Debug.Log("Connected");
+        //instance = this;
+        //IPAddress mIp = IPAddress.Parse(ip);
+        //IpTCP = new IPEndPoint(mIp, 26000);
+        //instance = this;
+        //tcp = new TcpClient();
+        //tcp.NoDelay = true;
+        //Debug.Log("Connecting...");
+        //tcp.Connect(IpTCP);
+        //Debug.Log("Connected");
 
     }
 
