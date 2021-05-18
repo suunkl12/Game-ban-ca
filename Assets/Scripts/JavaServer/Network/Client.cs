@@ -181,6 +181,7 @@ public class Client : MonoBehaviour
 
                 byte[] b = p.Serialize();
                 
+                
                 stream.WriteAsync(b, 0, b.Length);
 
             }
@@ -189,10 +190,12 @@ public class Client : MonoBehaviour
         }
         catch (InvalidOperationException ex)
         {
+            Debug.LogError(ex.Message);
             Disconnect();
         }
         catch (SocketException ex)
         {
+            Debug.LogError(ex.Message);
             Disconnect();
         }
 
