@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animation/Button.meta
 guid: 796e872872d018f428415edd41183e51
+=======
+guid: a3976147fa0670143872cb2157ffeb56
+>>>>>>> b37cb688f3bb542e93814cca234484fd8a815d1b:Assets/Scripts/JavaServer/Network/Message.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 using System.IO;
+using ProtoBuf;
 
 public class Client : MonoBehaviour
 {
@@ -144,7 +145,7 @@ public class Client : MonoBehaviour
             connected = true;
 
             Debug.Log("Connected");
-
+            Send();
             //threadReceive = new Thread(new ThreadStart(Receive))
             //{
             //    IsBackground = true
@@ -164,7 +165,42 @@ public class Client : MonoBehaviour
         }
 
     }
-    
+
+    public void Send()
+    {
+        if (!connected) return;
+        Person p = new Person();
+        p.ID = 2020;
+        p.name = "Khang";
+        try
+        {
+
+            NetworkStream stream = tcp.GetStream();
+            if (stream.CanWrite)
+            {
+
+                byte[] b = p.Serialize();
+                
+                
+                stream.WriteAsync(b, 0, b.Length);
+
+            }
+
+
+        }
+        catch (InvalidOperationException ex)
+        {
+            Debug.LogError(ex.Message);
+            Disconnect();
+        }
+        catch (SocketException ex)
+        {
+            Debug.LogError(ex.Message);
+            Disconnect();
+        }
+
+    }
+
 
     /*
     private IEnumerator Pinger()
