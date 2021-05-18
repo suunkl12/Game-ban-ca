@@ -35,6 +35,8 @@ public class Gun : NetworkBehaviour
 
     public int BulletAmount { get => bulletAmount; set => bulletAmount = value; }
 
+
+    Gun shooter;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class Gun : NetworkBehaviour
         {
             guns[i] = gunGraphic.transform.GetChild(i).gameObject;
         }
-
+        shooter = this;
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class Gun : NetworkBehaviour
             return;
         }
         
-        if (game_Manager.playerIn == this && Input.touchCount > 0)
+        if (game_Manager.playerIn == shooter && Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved)
             {
@@ -102,7 +104,7 @@ public class Gun : NetworkBehaviour
             Vector2 firedir = touchPos - (new Vector2(firePoint.position.x, firePoint.position.y));
             firedir.Normalize();
             GameObject bullet_ = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
-            bullet_.GetComponent<Ammo>().playerFrom = gameObject;
+            bullet_.GetComponent<Ammo>().playerFrom = shooter;
             bullet_.GetComponent<Ammo>().damage = damage;
             NetworkServer.Spawn(bullet_.gameObject);
             bullet_.GetComponent<Rigidbody2D>().velocity = firedir * bulletSpeed;
