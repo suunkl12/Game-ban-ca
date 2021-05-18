@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class menuManager : MonoBehaviour
 {
-    public GameObject m_PannelSettings, m_PannelSeeMore, m_ButtonMore;
+    public GameObject m_PannelSettings, m_PannelSeeMore, m_ButtonMore, m_PannelUsers;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +27,10 @@ public class menuManager : MonoBehaviour
         m_PannelSeeMore.GetComponent<Animator>().SetTrigger("PopMore");
         m_ButtonMore.GetComponent<Animator>().SetTrigger("turn");
 
+    }
+
+    public void btnLogin()
+    {
+        m_PannelUsers.GetComponent<Animator>().SetTrigger("loginpop");
     }
 }
