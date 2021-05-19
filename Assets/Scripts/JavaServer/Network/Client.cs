@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.IO;
 using ProtoBuf;
+using Google.Protobuf;
 
 public class Client : MonoBehaviour
 {
@@ -145,7 +146,9 @@ public class Client : MonoBehaviour
             connected = true;
 
             Debug.Log("Connected");
+            
             Send();
+            
             //threadReceive = new Thread(new ThreadStart(Receive))
             //{
             //    IsBackground = true
@@ -169,9 +172,6 @@ public class Client : MonoBehaviour
     public void Send()
     {
         if (!connected) return;
-        Person p = new Person();
-        p.ID = 2020;
-        p.name = "Khang";
         try
         {
 
@@ -179,10 +179,42 @@ public class Client : MonoBehaviour
             if (stream.CanWrite)
             {
 
-                byte[] b = p.Serialize();
-                
-                
+                var p = new Packet() { Id = 56, Msg = "This is a test message" };
+
+                //Protobuf-net nhanh gọn lẹ, nhưng chỉ xài được chung với C# với nhau ( tức là server và client là c#), còn nếu server là Java,
+                //xài Protobuf của google để đảm bảo tính compability
+
+                #region Protobuf-net error
+                //byte[] b;
+                //using (MemoryStream memoryStream = new MemoryStream())
+                //{
+                //    //Serializer.PrepareSerializer<Package>(); 
+                //    Serializer.Serialize(memoryStream, p);
+                //    b = memoryStream.ToArray();
+
+
+                //    byte[] a = new byte[b.Length +1];
+                //    a[0] = b[0];
+                //    for(int i=0; i < b.Length; i++)
+                //    {
+                //        a[i+1] = b[i];
+                //    }
+                //    stream.WriteAsync(a, 0, a.Length);
+
+                //}
+                #endregion
+
+
+                MemoryStream rawOutput = new MemoryStream();
+                CodedOutputStream output = new CodedOutputStream(rawOutput);
+                output.WriteMessage(p);
+                output.Flush();
+                var b = rawOutput.ToArray();
+
+
                 stream.WriteAsync(b, 0, b.Length);
+
+                //byte[] b = ProtobufEncoding.Encode(new Packet() { Id = (int)id, Msg = p.ToString() }, false);
 
             }
 
@@ -202,7 +234,7 @@ public class Client : MonoBehaviour
     }
 
 
-    /*
+    
     private IEnumerator Pinger()
     {
 
@@ -252,7 +284,7 @@ public class Client : MonoBehaviour
 
                     foreach (Packet p in pair.Value.Cast<Packet>())
                     {
-                        IMessage msg = Utils.getPacket(p);
+                        Message msg = Utils.getPacket(p);
 
                         if (msg != null)
                         {
@@ -278,7 +310,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    public void Send(IMessage p)
+    public void Send(Message p)
     {
         if (!connected) return;
 
@@ -311,7 +343,7 @@ public class Client : MonoBehaviour
 
     }
 
-    */
+    
 
     public void OnApplicationQuit()
     {

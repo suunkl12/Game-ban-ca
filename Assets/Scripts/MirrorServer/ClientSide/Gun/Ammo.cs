@@ -6,7 +6,7 @@ public class Ammo : NetworkBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    public Gun playerFrom;
+    public GameObject playerFrom;
     private Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public int damage;

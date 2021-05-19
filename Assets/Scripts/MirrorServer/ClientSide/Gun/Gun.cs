@@ -36,7 +36,7 @@ public class Gun : NetworkBehaviour
     public int BulletAmount { get => bulletAmount; set => bulletAmount = value; }
 
 
-    Gun shooter;
+    GameObject shooter;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +52,7 @@ public class Gun : NetworkBehaviour
         {
             guns[i] = gunGraphic.transform.GetChild(i).gameObject;
         }
-        shooter = this;
+        shooter = this.gameObject;
     }
 
     // Update is called once per frame

@@ -498,6 +498,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun Pivot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121162799657551128, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018075640968979750, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7784279541987275814, guid: 99505b372625a2c45907602debfaffcf,
         type: 3}
       propertyPath: sceneId
@@ -732,6 +742,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun Pivot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7018075640968979750, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7784279541987275814, guid: 99505b372625a2c45907602debfaffcf,
         type: 3}
       propertyPath: sceneId
@@ -739,6 +754,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99505b372625a2c45907602debfaffcf, type: 3}
+--- !u!4 &226876580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2160255894566959336, guid: 99505b372625a2c45907602debfaffcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 226876579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &254405477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2471,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1246912230}
+  - {fileID: 226876580}
   - {fileID: 188398155}
   - {fileID: 1833743357}
   - {fileID: 2112038229}
@@ -2987,12 +3008,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014707994}
   m_CullTransparentMesh: 0
---- !u!4 &1246912230 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2160255894566959336, guid: 99505b372625a2c45907602debfaffcf,
-    type: 3}
-  m_PrefabInstance: {fileID: 226876579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257972948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,6 +3975,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun Pivot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121162799657551128, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018075640968979750, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7784279541987275814, guid: 99505b372625a2c45907602debfaffcf,
         type: 3}
       propertyPath: sceneId
@@ -4250,6 +4275,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gun Pivot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121162799657551128, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018075640968979750, guid: 99505b372625a2c45907602debfaffcf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7784279541987275814, guid: 99505b372625a2c45907602debfaffcf,
         type: 3}
