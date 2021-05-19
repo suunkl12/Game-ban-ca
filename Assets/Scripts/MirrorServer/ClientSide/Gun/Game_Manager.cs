@@ -26,7 +26,10 @@ public class Game_Manager : NetworkBehaviour
         }
 
     }
-
+    private void Update()
+    {
+        level = playerIn.level;
+    }
     void setSlot()
     {
         for (int i = 0; i < slotGun.Length; i++)

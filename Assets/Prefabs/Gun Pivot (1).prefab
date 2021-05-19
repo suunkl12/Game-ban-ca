@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4884637321312699450}
   m_Layer: 0
   m_Name: Gun Pivot (1)
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,9 +91,9 @@ MonoBehaviour:
   gunGraphic: {fileID: 3294476867342454302}
   guns:
   - {fileID: 255930825888485563}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7159986276332157150}
+  - {fileID: 1008565081314722577}
+  - {fileID: 7336060770233505136}
   level: 1
   damage: 50
   Score: 0
@@ -310,7 +310,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &765706623531727993
 MonoBehaviour:
@@ -561,6 +561,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08498776deaf9044992480182efbda07, type: 3}
+--- !u!1 &7159986276332157150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6416974673872214322, guid: 08498776deaf9044992480182efbda07,
+    type: 3}
+  m_PrefabInstance: {fileID: 4202084826735960556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1377078017056770220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975912659482634560, guid: 08498776deaf9044992480182efbda07,
@@ -663,6 +669,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4378413702960286786}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7336060770233505136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6416974673872214322, guid: 08498776deaf9044992480182efbda07,
+    type: 3}
+  m_PrefabInstance: {fileID: 4378413702960286786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6121105402226825763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,6 +758,12 @@ PrefabInstance:
 --- !u!4 &9060706049043510115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975912659482634560, guid: 08498776deaf9044992480182efbda07,
+    type: 3}
+  m_PrefabInstance: {fileID: 6121105402226825763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008565081314722577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6416974673872214322, guid: 08498776deaf9044992480182efbda07,
     type: 3}
   m_PrefabInstance: {fileID: 6121105402226825763}
   m_PrefabAsset: {fileID: 0}

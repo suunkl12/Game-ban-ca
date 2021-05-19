@@ -10,4 +10,14 @@ public class GunInfoPackage : Message
     public GunInfoPackage()
     {
     }
+
+    public override void Read()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Write()
+    {
+        throw new System.NotImplementedException();
+    }
 }
