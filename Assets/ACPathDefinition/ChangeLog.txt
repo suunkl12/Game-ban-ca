@@ -1,0 +1,21 @@
+
+
+///////////////// NEW VERSION ///////////////
+Update 2.8 Changes:
+- Documentation Updated.
+- New integration -> Custom Speed for each central point.
+ > Now you can add custom movement speed for each main point as optiona setting. 
+
+
+///////////////// OLD VERSIONS LOG //////////////
+Update 2.6 Changes:
+- FollowPath.cs got some changes where you can stop your object at the end of the path and resume whenever you want
+- WaveSpawner.cs now can choose to loop through the waves or stop at the last wave: default value(loop).
+- Update to extend compatibility with the newest Unity3D version.
+
+Update 2.7 Changes:
+- Made functions of path setup hidden in .dll for protection.
+ > If behaviours are odd on mobile please place them in Assets\Plugins folder to extend compatibility the right way.
+ > Refer to Unity documentation for more information: https://docs.unity3d.com/Manual/PluginInspector.html
+- Setting some algorithms for next Update with new integrations. Big changes, addons on next update!!
+- Bugs management updated.
