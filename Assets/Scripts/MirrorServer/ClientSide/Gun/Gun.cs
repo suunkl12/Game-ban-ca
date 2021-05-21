@@ -52,7 +52,7 @@ public class Gun : NetworkBehaviour
         {
             guns[i] = gunGraphic.transform.GetChild(i).gameObject;
         }
-        shooter = this.gameObject;
+        shooter = gameObject;
     }
 
     // Update is called once per frame
@@ -104,7 +104,7 @@ public class Gun : NetworkBehaviour
             Vector2 firedir = touchPos - (new Vector2(firePoint.position.x, firePoint.position.y));
             firedir.Normalize();
             GameObject bullet_ = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
-            bullet_.GetComponent<Ammo>().playerFrom = shooter;
+            bullet_.GetComponent<Ammo>().playerFrom = shooter.GetComponent<Gun>();
             bullet_.GetComponent<Ammo>().damage = damage;
             NetworkServer.Spawn(bullet_.gameObject);
             bullet_.GetComponent<Rigidbody2D>().velocity = firedir * bulletSpeed;

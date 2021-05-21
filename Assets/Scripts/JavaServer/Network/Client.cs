@@ -22,7 +22,7 @@ public class Client : MonoBehaviour
     public int? id = null;
     public int? number = null;
 
-    //public Dictionary<int, PlayerController> players = new Dictionary<int, PlayerController>();
+    public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
     //public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 
@@ -104,9 +104,7 @@ public class Client : MonoBehaviour
 
                             if (t.name == "DisconnectScreen")
                             {
-
                                 t.gameObject.SetActive(true);
-
                             }
 
                         }
@@ -143,20 +141,22 @@ public class Client : MonoBehaviour
         try
         {
             tcp.Connect(IpTCP);
+
+            // Nếu như connect =
             connected = true;
 
             Debug.Log("Connected");
             
             Send();
-            
-            //threadReceive = new Thread(new ThreadStart(Receive))
-            //{
-            //    IsBackground = true
-            //};
 
-            //threadReceive.Start();
+            threadReceive = new Thread(new ThreadStart(Receive))
+            {
+                IsBackground = true
+            };
 
-            //UnityThread.executeInUpdate(() => StartCoroutine("Pinger"));
+            threadReceive.Start();
+
+            UnityThread.executeInUpdate(() => StartCoroutine( Pinger() ));
 
             return true;
         }
@@ -266,8 +266,13 @@ public class Client : MonoBehaviour
 
                 int length;
 
+                //Read trả về length của byte array, có lẽ cái này dùng để check length trước khi làm bất cứ thứ gì khác
+
+                
                 while ((length = stream.Read(bytes, lengthl, bytes.Length - lengthl)) > 0)
                 {
+
+                    //Sau khi check xong thì biến bytes đã có thông tin, nên ta decode nó
                     KeyValuePair<byte[], List<Google.Protobuf.IMessage>> pair = ProtobufEncoding.Decode(bytes);
 
                     if (pair.Key.Length > 0)

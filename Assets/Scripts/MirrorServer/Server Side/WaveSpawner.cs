@@ -22,7 +22,7 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public string name;//name of the wave that is currently spawning.
-        public Transform SpawnObject; // what Object are we gonna spawn.
+        public GameObject SpawnObject; // what Object are we gonna spawn.
         public int count; // How many object are we gonna spawn
         public float rate; // at what rate we gonna spawn all the object per wave.
     }
@@ -125,7 +125,7 @@ public class WaveSpawner : MonoBehaviour
     /// Spawn the objects at spawner position or modify this method to spawn at given points randomly.
     /// </summary>
     /// <param name="_enemy"></param>
-    private void SpawnEnemy(Transform _enemy)
+    private void SpawnEnemy(GameObject _enemy)
     {
         //spawn enemy
         Instantiate(_enemy, transform.position, Quaternion.identity);

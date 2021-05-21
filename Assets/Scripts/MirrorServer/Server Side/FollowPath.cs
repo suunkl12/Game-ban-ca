@@ -20,6 +20,8 @@ public class FollowPath : MonoBehaviour
 {
     [Header("Follow Path Settings.")]
     #region FIELDS
+    private GameObject[] listpaths;
+    private int RandomNumber;
     public PathDefinition path; // PathDefinition Instance.
     public MovementType MoveDirection = MovementType.MoveForward; // Direction that I move on Path
     public RotationType rotationType = RotationType.NONE;
@@ -61,9 +63,13 @@ public class FollowPath : MonoBehaviour
     #endregion
 
     void Start()
-    {
+    {   //TIm tat Ca cac Gobject Tag Path tren scene va ngau nhien chon 1 path cho gameobject di chuyen khi init ra mang hinh
+        listpaths = GameObject.FindGameObjectsWithTag("Path");
+        RandomNumber = UnityEngine.Random.Range(0,listpaths.Length+1);
+        path = listpaths[RandomNumber].GetComponent<PathDefinition>();
         //Error Exceptions
         Exceptions();
+        
         _defaultMoveSpeed = moveSpeed;
         //Get loop setting
         loop = path.loopPath;

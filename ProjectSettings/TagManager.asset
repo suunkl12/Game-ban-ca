@@ -12,6 +12,8 @@ TagManager:
   - Animal
   - Bullet
   - FxTemporaire
+  - Enemy
+  - Path
   layers:
   - Default
   - TransparentFX

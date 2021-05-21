@@ -26,7 +26,7 @@ public class AnimalHealth : MonoBehaviour
 
     }
 
-    public void TakeDamage(GameObject playerFrom, int damage)
+    public void TakeDamage(Gun playerFrom, int damage)
     {
         health -= damage;
         playerFrom.GetComponent<Gun>().Score += score;

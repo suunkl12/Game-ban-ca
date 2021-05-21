@@ -1485,6 +1485,7 @@ public void OnLevelWasLoaded( int lvl ){
 	LTGUI.reset();
 }
 
+
 private static Transform trans;
 private static float timeTotal;
 private static TweenAction tweenAction;

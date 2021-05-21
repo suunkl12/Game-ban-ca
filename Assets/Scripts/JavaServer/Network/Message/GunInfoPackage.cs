@@ -13,7 +13,11 @@ public class GunInfoPackage : Message
 
     public override void Read()
     {
-        throw new System.NotImplementedException();
+        int id = (int)objects[0];
+
+        //Trong dictinary không có cái key nào trùng thì không dọc dữ liệu gửi đến
+        if (!Client.instance.guns.ContainsKey(id)) return;
+
     }
 
     public override void Write()
