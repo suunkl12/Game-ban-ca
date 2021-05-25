@@ -19,14 +19,17 @@ public class Client : MonoBehaviour
     public static short port = 4296;
     public IPEndPoint IpTCP;
     public long when;
+
+
     public int? id = null;
     public int? number = null;
 
-    //public Dictionary<int, PlayerController> players = new Dictionary<int, PlayerController>();
+    public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
     //public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 
     [Header("Prefabs")]
+    //Player ở đây là cây súng luôn
     public GameObject player;
     public GameObject blood;
     public GameObject bullet;
@@ -38,6 +41,10 @@ public class Client : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(1920 , 1080,true);
+        //Khởi tạo một object với component Unity thread
+        //true là object hiện hình, false là giấu đi object
+        UnityThread.initUnityThread(false);
 
         foreach (DestructibleType dt in Enum.GetValues(typeof(DestructibleType)).Cast<DestructibleType>())
         {
@@ -83,6 +90,8 @@ public class Client : MonoBehaviour
 
     }
 
+
+    //TODO: sửa lại thành true và hiển thị màn hình disconnect
     public void Disconnect() { Disconnect(true); }
 
     public void Disconnect(bool show)
@@ -104,9 +113,7 @@ public class Client : MonoBehaviour
 
                             if (t.name == "DisconnectScreen")
                             {
-
                                 t.gameObject.SetActive(true);
-
                             }
 
                         }
@@ -143,20 +150,24 @@ public class Client : MonoBehaviour
         try
         {
             tcp.Connect(IpTCP);
+
+            // Nếu như connect là false thì không attemp connect nữa
             connected = true;
 
             Debug.Log("Connected");
             
-            Send();
-            
-            //threadReceive = new Thread(new ThreadStart(Receive))
-            //{
-            //    IsBackground = true
-            //};
+            // Bắt đầu nhận thông tin từ phía server
+            threadReceive = new Thread(new ThreadStart(Receive))
+            {
+                //Background thread không ngăn chương trình dừng lại, chương trình dừng thì background thread sẽ dừng luôn
+                IsBackground = true
+            };
 
-            //threadReceive.Start();
+            threadReceive.Start();
 
-            //UnityThread.executeInUpdate(() => StartCoroutine("Pinger"));
+
+            //Chưa cần phải hiện ping
+            //UnityThread.executeInUpdate(() => StartCoroutine( Pinger() ));
 
             return true;
         }
@@ -266,8 +277,12 @@ public class Client : MonoBehaviour
 
                 int length;
 
+                //Read trả về length của byte array, có lẽ cái này dùng để check length trước khi làm bất cứ thứ gì khác
+                
                 while ((length = stream.Read(bytes, lengthl, bytes.Length - lengthl)) > 0)
                 {
+                    Debug.Log("A message has been recieve");
+                    //Sau khi check xong thì biến bytes đã có thông tin, nên ta decode nó
                     KeyValuePair<byte[], List<Google.Protobuf.IMessage>> pair = ProtobufEncoding.Decode(bytes);
 
                     if (pair.Key.Length > 0)
@@ -284,7 +299,7 @@ public class Client : MonoBehaviour
 
                     foreach (Packet p in pair.Value.Cast<Packet>())
                     {
-                        Message msg = Utils.getPacket(p);
+                        MessagePacket msg = Utils.getPacket(p);
 
                         if (msg != null)
                         {
@@ -310,7 +325,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    public void Send(Message p)
+    public void Send(MessagePacket p)
     {
         if (!connected) return;
 

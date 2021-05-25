@@ -159,7 +159,10 @@ public class UnityThread : MonoBehaviour
     #endregion
 
 
-    //Used to initialize UnityThread. Call once before any function here
+    /// <summary>
+    /// Used to initialize UnityThread. Call once before any function here
+    /// </summary>
+    /// <param name="visible">Should the object visible in the scene?</param> 
     public static void initUnityThread(bool visible = false)
     {
         if (instance != null)
@@ -209,10 +212,6 @@ public class UnityThread : MonoBehaviour
             noActionQueueToExecuteUpdateFunc = false;
         }
     }
-
-    
-
-
 
    
 

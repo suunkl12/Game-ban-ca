@@ -11,14 +11,19 @@ public class Utils
     static Utils()
     {
         Add(Tags.PING, typeof(PingPacket));
-
+        Add(Tags.INFO, typeof(ClientInfoPacket));
+        Add(Tags.PLAYER_SPAWN, typeof(PlayerSpawnPacket));
+        Add(Tags.OBJECT_DESPAWN, typeof(ObjectDespawnPacket));
+        Add(Tags.PLAYER_SHOT, typeof(PlayerShootPacket));
     }
 
-    public static Message getPacket(Packet p)
+
+    //TODO: debug to findout what this does
+    public static MessagePacket getPacket(Packet p)
     {
         if (!types.ContainsKey(p.Id)) return null;
 
-        Message msg = (Message)Activator.CreateInstance(types[p.Id]);
+        MessagePacket msg = (MessagePacket)Activator.CreateInstance(types[p.Id]);
         msg.Initialize(p.Msg);
 
         return msg;

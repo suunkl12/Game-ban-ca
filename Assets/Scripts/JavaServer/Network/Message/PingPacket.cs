@@ -3,7 +3,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PingPacket : Message
+public class PingPacket : MessagePacket
 {
 
     static PingPacket()
@@ -25,7 +25,7 @@ public class PingPacket : Message
     public override void Read()
     {
         Text ping = GameObject.FindGameObjectWithTag("Ping").GetComponent<Text>();
-        ping.text = "Задержка: " + ((int) (DateTimeOffset.Now.ToUnixTimeMilliseconds() - Client.instance.when)) + " мс";
+        ping.text = "Delay: " + ((int) (DateTimeOffset.Now.ToUnixTimeMilliseconds() - Client.instance.when)) + " ms";
     }
 
     public override void Write()

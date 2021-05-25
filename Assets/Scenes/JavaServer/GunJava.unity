@@ -694,9 +694,9 @@ RectTransform:
   m_Father: {fileID: 418991529}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254405479
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1257972953}
+      - m_Target: {fileID: 0}
         m_MethodName: switchGun
         m_Mode: 3
         m_Arguments:
@@ -976,7 +976,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453663283}
-  - component: {fileID: 453663284}
   - component: {fileID: 453663285}
   m_Layer: 0
   m_Name: NetworkManager
@@ -999,19 +998,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &453663284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453663282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df7adfb96d79c741b49d4e788c3200d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connected: 0
 --- !u!114 &453663285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   when: 0
-  player: {fileID: 0}
+  player: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89, type: 3}
   blood: {fileID: 0}
   bullet: {fileID: 0}
   cartridge: {fileID: 0}
@@ -1258,12 +1244,12 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -1283,12 +1269,12 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -1308,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -1505,7 +1491,7 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -1776,9 +1762,9 @@ RectTransform:
   m_Father: {fileID: 418991529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764127329
@@ -1824,7 +1810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1257972953}
+      - m_Target: {fileID: 0}
         m_MethodName: switchGun
         m_Mode: 3
         m_Arguments:
@@ -2401,9 +2387,9 @@ RectTransform:
   m_Father: {fileID: 418991529}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014707996
@@ -2449,7 +2435,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1257972953}
+      - m_Target: {fileID: 0}
         m_MethodName: switchGun
         m_Mode: 3
         m_Arguments:
@@ -2509,15 +2495,13 @@ GameObject:
   - component: {fileID: 1257972951}
   - component: {fileID: 1257972950}
   - component: {fileID: 1257972949}
-  - component: {fileID: 1257972953}
-  - component: {fileID: 1257972954}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1257972949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,46 +2586,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1257972953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257972948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae48a11496a5ecf44b9d45f862afe58f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  game_Manager: {fileID: 0}
-  ChangeSlot: {fileID: 1797975925}
-  urhContainer: {fileID: 380245384}
-  btnContainer: {fileID: 418991528}
-  ScoreTxt: {fileID: 621567912}
-  bulletAmountTxt: {fileID: 1610437971}
-  slotGun: []
-  urh: []
-  btn: []
---- !u!114 &1257972954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257972948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 581098820
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &1301338381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1301338382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,7 +2854,7 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -2930,12 +2874,12 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -2955,7 +2899,7 @@ PrefabInstance:
     - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89,
         type: 3}
@@ -3070,9 +3014,9 @@ RectTransform:
   m_Father: {fileID: 418991529}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606892413
@@ -3118,7 +3062,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1257972953}
+      - m_Target: {fileID: 0}
         m_MethodName: switchGun
         m_Mode: 3
         m_Arguments:
