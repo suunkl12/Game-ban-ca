@@ -1,14 +1,23 @@
-﻿using UnityEngine;
-
+﻿using System.Reflection;
+using UnityEngine;
+using System;
 public class ObjectDespawnPacket : MessagePacket
 {
     public ObjectDespawnPacket() { }
+
+    static ObjectDespawnPacket()
+    {
+        SetTypes(MethodBase.GetCurrentMethod().DeclaringType,
+            new Type[] {
+            typeof(int),
+            typeof(ObjectType) });
+    }
 
     public override void Read()
     {
         int id = (int)objects[0];
         ObjectType ot = (ObjectType)objects[1];
-
+        
         if (ot == ObjectType.PLAYER)
         {
             //guns đã từng là players

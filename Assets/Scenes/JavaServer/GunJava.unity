@@ -818,9 +818,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 248339584}
-  - {fileID: 726108614}
-  - {fileID: 1387639361}
-  - {fileID: 617598666}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1011,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   when: 0
-  player: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89, type: 3}
+  player: {fileID: 2160255894566959339, guid: 3a9c4aaf6d84c36449116bd59f2dac0b, type: 3}
   blood: {fileID: 0}
   bullet: {fileID: 0}
   cartridge: {fileID: 0}
@@ -1234,81 +1231,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602731628}
   m_CullTransparentMesh: 0
---- !u!1001 &617598665
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 322959067}
-    m_Modifications:
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun Pivot Java (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4827f2f2b77faa4e960a32627861e89, type: 3}
---- !u!4 &617598666 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-    type: 3}
-  m_PrefabInstance: {fileID: 617598665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &621567911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,81 +1403,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668325189}
   m_CullTransparentMesh: 0
---- !u!1001 &726108613
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 322959067}
-    m_Modifications:
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun Pivot Java (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4827f2f2b77faa4e960a32627861e89, type: 3}
---- !u!4 &726108614 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-    type: 3}
-  m_PrefabInstance: {fileID: 726108613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730734485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,81 +2686,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315104897}
   m_CullTransparentMesh: 0
---- !u!1001 &1387639360
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 322959067}
-    m_Modifications:
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2160255894566959339, guid: f4827f2f2b77faa4e960a32627861e89,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun Pivot Java (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4827f2f2b77faa4e960a32627861e89, type: 3}
---- !u!4 &1387639361 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2160255894566959336, guid: f4827f2f2b77faa4e960a32627861e89,
-    type: 3}
-  m_PrefabInstance: {fileID: 1387639360}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434473177
 GameObject:
   m_ObjectHideFlags: 0
