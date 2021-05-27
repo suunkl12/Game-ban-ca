@@ -25,7 +25,7 @@ public class Client : MonoBehaviour
     public int? number = null;
 
     public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
-    //public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 
     [Header("Prefabs")]

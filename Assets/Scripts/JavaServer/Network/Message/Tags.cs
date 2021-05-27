@@ -34,5 +34,6 @@
     public const ushort CIRCLE_INFO = 9;
     public const ushort PLAYER_PICKUP = 10;
     public const ushort OBJECT_INFO = 11;
+    public const ushort OBJECT_MOVE = 12;
 
 }

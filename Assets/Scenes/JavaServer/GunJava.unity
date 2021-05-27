@@ -1010,7 +1010,7 @@ MonoBehaviour:
   when: 0
   player: {fileID: 2160255894566959339, guid: 3a9c4aaf6d84c36449116bd59f2dac0b, type: 3}
   blood: {fileID: 0}
-  bullet: {fileID: 0}
+  bullet: {fileID: 1984912990817141937, guid: 13e930224012bed42b6ee1d8284cd5d2, type: 3}
   cartridge: {fileID: 0}
   connected: 0
 --- !u!1 &519420028

@@ -15,6 +15,7 @@ public class Utils
         Add(Tags.PLAYER_SPAWN, typeof(PlayerSpawnPacket));
         Add(Tags.OBJECT_DESPAWN, typeof(ObjectDespawnPacket));
         Add(Tags.PLAYER_SHOT, typeof(PlayerShootPacket));
+        Add(Tags.OBJECT_SPAWN, typeof(ObjectSpawnPacket));
     }
 
 
