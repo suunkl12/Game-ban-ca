@@ -25,6 +25,7 @@ public class Client : MonoBehaviour
     public int? number = null;
 
     public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
+    public Dictionary<int, GameObject> bullets = new Dictionary<int, GameObject>();
     public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 
@@ -49,13 +50,6 @@ public class Client : MonoBehaviour
         foreach (DestructibleType dt in Enum.GetValues(typeof(DestructibleType)).Cast<DestructibleType>())
         {
             prefabs.Add(dt.ToString(), Resources.Load<GameObject>("Objects/" + dt.ToString()));
-
-        }
-
-        foreach (IndestructibleType it in Enum.GetValues(typeof(IndestructibleType)).Cast<IndestructibleType>())
-        {
-
-            prefabs.Add(it.ToString(), Resources.Load<GameObject>("Objects/" + it.ToString()));
 
         }
 

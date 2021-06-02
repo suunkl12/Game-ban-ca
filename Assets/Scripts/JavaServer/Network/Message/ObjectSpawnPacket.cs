@@ -30,8 +30,10 @@ public class ObjectSpawnPacket : MessagePacket
         if(ot == ObjectType.BULLET)
         {
             GameObject bullet = GameObject.Instantiate(Client.instance.bullet, new Vector2((float)objects[3], (float)objects[4]), Quaternion.Euler(0,0,(float)objects[5]));
+            Client.instance.bullets.Add(id, bullet);
             return;
         }
+
         string type = (string)objects[2];
 
         if (!Client.instance.prefabs.ContainsKey(type)) return;
