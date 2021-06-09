@@ -64,8 +64,12 @@ public class Client : MonoBehaviour
         tcp = new TcpClient();
         tcp.NoDelay = true;
 
-        Connect(ip, port);
 
+    }
+
+    public void ButtonConnect()
+    {
+        Connect(ip, port);
     }
 
     public void Connect(string ip, int porttcp)
