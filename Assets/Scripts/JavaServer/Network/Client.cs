@@ -64,7 +64,7 @@ public class Client : MonoBehaviour
         tcp = new TcpClient();
         tcp.NoDelay = true;
 
-
+        Connect("127.0.0.1",4296);
     }
 
     public void ButtonConnect()

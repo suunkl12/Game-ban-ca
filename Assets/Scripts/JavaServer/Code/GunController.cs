@@ -40,6 +40,7 @@ public class GunController : MonoBehaviour
         var input = Input.GetTouch(0);
         if ( input.phase == TouchPhase.Began || input.phase == TouchPhase.Stationary || input.phase == TouchPhase.Moved)
         {
+            Debug.Log("Shoot");
             var touchPos = Camera.main.ScreenToWorldPoint(input.position);
 
             var degree = Vector2.SignedAngle(Vector2.right, (touchPos - transform.position)) - 90;
