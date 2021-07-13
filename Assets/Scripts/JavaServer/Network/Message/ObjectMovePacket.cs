@@ -26,6 +26,10 @@ public class ObjectMovePacket : MessagePacket
                 if (!Client.instance.bullets.ContainsKey(id)) return;
                 Client.instance.bullets[id].gameObject.transform.position = new Vector3((float)objects[2], (float)objects[3] ,0);
                 break;
+            case ObjectType.FISH:
+                if (!Client.instance.fishes.ContainsKey(id)) return;
+                Client.instance.fishes[id].gameObject.transform.position = new Vector3((float)objects[2], (float)objects[3], 0);
+                break;
         }
     }
 

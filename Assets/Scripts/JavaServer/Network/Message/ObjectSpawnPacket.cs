@@ -11,7 +11,7 @@ public class ObjectSpawnPacket : MessagePacket
         SetTypes(MethodBase.GetCurrentMethod().DeclaringType, new Type[] {
             typeof(int), // ID 0
             typeof(ObjectType), // Type of object 1
-            typeof(string), // FishType 2
+            typeof(FistType), // FishType 2
             typeof(float), // X - Position 3
             typeof(float), // Y - Position 4
             typeof(float), // Rotation 5
@@ -25,6 +25,8 @@ public class ObjectSpawnPacket : MessagePacket
     {
 
         int id = (int)objects[0];
+
+
         ObjectType ot = (ObjectType)objects[1];
 
         if(ot == ObjectType.BULLET)
@@ -34,13 +36,23 @@ public class ObjectSpawnPacket : MessagePacket
             return;
         }
 
-        string type = (string)objects[2];
+        if(ot == ObjectType.FISH)
+        {
+            FistType animalType = (FistType)objects[2];
 
-        if (!Client.instance.prefabs.ContainsKey(type)) return;
-        GameObject prefab = Client.instance.prefabs[type];
+            GameObject animal = GameObject.Instantiate(Client.instance.prefab[(int)animalType], new Vector2((float)objects[3], (float)objects[4]), Quaternion.Euler(0, 0, (float)objects[5]));
+            Client.instance.fishes.Add(id, animal);
 
-        GameObject go = GameObject.Instantiate(prefab, new Vector2((float)objects[3], (float)objects[4]), Quaternion.identity);
-        Client.instance.objects.Add(id, go);
+            return;
+        }
+
+        //FistType type = (FistType)objects[2];
+
+        //if (!Client.instance.prefabs.ContainsKey(type)) return;
+        //GameObject prefab = Client.instance.prefabs[type];
+
+        //GameObject go = GameObject.Instantiate(prefab, new Vector2((float)objects[3], (float)objects[4]), Quaternion.identity);
+        //Client.instance.objects.Add(id, go);
 
 
         if (Client.instance.number != null && Client.instance.objects.Count >= Client.instance.number)

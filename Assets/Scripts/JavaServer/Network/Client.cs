@@ -26,15 +26,16 @@ public class Client : MonoBehaviour
 
     public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
     public Dictionary<int, GameObject> bullets = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> fishes = new Dictionary<int, GameObject>();
     public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 
     [Header("Prefabs")]
     //Player ở đây là cây súng luôn
     public GameObject player;
-    public GameObject blood;
     public GameObject bullet;
-    public GameObject cartridge;
+
+    public List<GameObject> prefab;
 
     public bool connected = false;
     public Thread threadReceive;

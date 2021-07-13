@@ -31,7 +31,12 @@ public enum IndestructibleType
 
 public enum ObjectType
 {
-    DESTRUCTIBLE, INDESTRUCTIBLE, ITEM, PLAYER, BULLET, NONE
+    FISH, DESTRUCTIBLE, INDESTRUCTIBLE, ITEM, PLAYER, BULLET, NONE
+}
+
+public enum FistType
+{
+    FOX, RABBIT, PIG, CHICKEN, MOUSE, NONE
 }
 
 public class TypeUtils

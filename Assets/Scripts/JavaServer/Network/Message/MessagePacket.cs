@@ -80,6 +80,16 @@ public abstract class MessagePacket
                 catch (Exception ignored) { return; }
 
             }
+            else if (types[i] == typeof(FistType))
+            {
+                if(split[i]  == "")
+                {
+                    objects.Add(FistType.NONE);
+                }else
+                    try { objects.Add(Enum.Parse(typeof(FistType), split[i])); }
+                    catch (Exception ignored) { return; }
+
+            }
 
         }
 

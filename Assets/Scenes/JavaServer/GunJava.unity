@@ -762,9 +762,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   when: 0
   player: {fileID: 2160255894566959339, guid: 3a9c4aaf6d84c36449116bd59f2dac0b, type: 3}
-  blood: {fileID: 0}
   bullet: {fileID: 1984912990817141937, guid: 13e930224012bed42b6ee1d8284cd5d2, type: 3}
-  cartridge: {fileID: 0}
+  prefab:
+  - {fileID: 3907297177702584556, guid: b7ea37b438e64ad4a85ccedf449eef07, type: 3}
+  - {fileID: 8825390370729200569, guid: af7056859b8f20c45949d0f6ab88bf5a, type: 3}
+  - {fileID: 1621348563323184674, guid: a79b8d108b2f3764981f85b25e702008, type: 3}
+  - {fileID: 7774444658164420176, guid: 31349889a2ee65642bae151d5cf2b409, type: 3}
+  - {fileID: 272218641057793322, guid: 003695ba73c3be04da587a4de7a29e0a, type: 3}
   connected: 0
 --- !u!1 &519420028
 GameObject:
@@ -2640,7 +2644,7 @@ PrefabInstance:
     - target: {fileID: 4785881946132621815, guid: 85d3a4d46693a4d4aa65f8d60c5bf913,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4785881946132621818, guid: 85d3a4d46693a4d4aa65f8d60c5bf913,
         type: 3}
