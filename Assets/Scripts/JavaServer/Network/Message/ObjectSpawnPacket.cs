@@ -38,6 +38,7 @@ public class ObjectSpawnPacket : MessagePacket
 
         if(ot == ObjectType.FISH)
         {
+            Debug.Log("Spawning animal");
             FistType animalType = (FistType)objects[2];
 
             GameObject animal = GameObject.Instantiate(Client.instance.prefab[(int)animalType], new Vector2((float)objects[3], (float)objects[4]), Quaternion.Euler(0, 0, (float)objects[5]));

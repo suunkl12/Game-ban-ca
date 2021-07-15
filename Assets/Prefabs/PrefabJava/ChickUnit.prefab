@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6228946155743004764}
   - component: {fileID: 5100797912219916563}
   - component: {fileID: 6629148774158469718}
+  - component: {fileID: 5376910618667760146}
   m_Layer: 0
   m_Name: ChickUnit
   m_TagString: Animal
@@ -142,6 +143,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5376910618667760146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774444658164420176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f597a45ad5c8944884017e7a09d1f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  currentHealth: 0
+  score: 0
 --- !u!1001 &616719189869624780
 PrefabInstance:
   m_ObjectHideFlags: 0

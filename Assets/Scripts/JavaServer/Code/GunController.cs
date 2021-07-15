@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GunController : MonoBehaviour
 {
@@ -34,7 +35,27 @@ public class GunController : MonoBehaviour
     public void Shoot()
     {
         
+
+
         if (!controllable) return;
+
+        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) || Input.GetMouseButton((int)MouseButton.LeftMouse))
+        {
+            var touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var degree = Vector2.SignedAngle(Vector2.right, (touchPos - transform.position)) - 90;
+            transform.rotation = Quaternion.Euler(
+                transform.rotation.x,
+                transform.rotation.y,
+                degree);
+
+            isShoot = true;
+
+            if (m_animator != null)
+                m_animator.SetBool("shoot", true);
+
+            new PlayerShootPacket(id, degree).Write();
+        }
+
         if (Input.touchCount <= 0) return;
 
         var input = Input.GetTouch(0);
@@ -57,6 +78,8 @@ public class GunController : MonoBehaviour
             new PlayerShootPacket(id, degree).Write();
 
         }
+
+        
     }
 
     public void RpcShoot(float rotation)

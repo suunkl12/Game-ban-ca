@@ -43,7 +43,9 @@ public class Client : MonoBehaviour
 
     void Start()
     {
-        Screen.SetResolution(1920 , 1080,true);
+        #if UNITY_ANDROID
+                //Screen.SetResolution(1920 , 1080,true);
+        #endif
         //Khởi tạo một object với component Unity thread
         //true là object hiện hình, false là giấu đi object
         UnityThread.initUnityThread(false);
@@ -194,7 +196,7 @@ public class Client : MonoBehaviour
                 //Protobuf-net nhanh gọn lẹ, nhưng chỉ xài được chung với C# với nhau ( tức là server và client là c#), còn nếu server là Java,
                 //xài Protobuf của google để đảm bảo tính compability
 
-                #region Protobuf-net error
+#region Protobuf-net error
                 //byte[] b;
                 //using (MemoryStream memoryStream = new MemoryStream())
                 //{
@@ -212,7 +214,7 @@ public class Client : MonoBehaviour
                 //    stream.WriteAsync(a, 0, a.Length);
 
                 //}
-                #endregion
+#endregion
 
 
                 MemoryStream rawOutput = new MemoryStream();

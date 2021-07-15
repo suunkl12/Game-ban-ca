@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MirrorServer/MainScene.unity
-    guid: 78d90c411805cb744a19e7772054a1f8
-  - enabled: 1
-    path: Assets/Scenes/MirrorServer/Gun.unity
-    guid: fcabff9004a9bdc44a0664633ff0ace8
+    path: Assets/Scenes/JavaServer/GunJava.unity
+    guid: 3e81daa0d87b1754d87c599490ef4ac9
   m_configObjects: {}

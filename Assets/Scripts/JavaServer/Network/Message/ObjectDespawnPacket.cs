@@ -55,6 +55,11 @@ public class ObjectDespawnPacket : MessagePacket
                 GameObject.Destroy(Client.instance.bullets[id].gameObject);
                 Client.instance.bullets.Remove(id);
                 break;
+            case ObjectType.FISH:
+                if (!Client.instance.fishes.ContainsKey(id)) return;
+                Client.instance.fishes[id].GetComponent<AnimalHealth>().StartDead();
+                Client.instance.fishes.Remove(id);
+                break;
             case ObjectType.NONE:
                 if (!Client.instance.objects.ContainsKey(id)) return;
 
