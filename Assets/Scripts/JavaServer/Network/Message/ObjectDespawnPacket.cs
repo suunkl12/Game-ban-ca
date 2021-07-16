@@ -56,9 +56,10 @@ public class ObjectDespawnPacket : MessagePacket
                 Client.instance.bullets.Remove(id);
                 break;
             case ObjectType.FISH:
-                if (!Client.instance.fishes.ContainsKey(id)) return;
-                Client.instance.fishes[id].GetComponent<AnimalHealth>().StartDead();
-                Client.instance.fishes.Remove(id);
+                if (!Client.instance.animals.ContainsKey(id)) return;
+                Client.instance.animals[id].GetComponent<AnimalHealth>().StartDead();
+                Client.instance.animals.Remove(id);
+
                 break;
             case ObjectType.NONE:
                 if (!Client.instance.objects.ContainsKey(id)) return;
@@ -74,4 +75,6 @@ public class ObjectDespawnPacket : MessagePacket
     {
         throw new System.NotImplementedException();
     }
+
+
 }

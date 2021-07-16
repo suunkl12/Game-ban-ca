@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ public class ObjectSpawnPacket : MessagePacket
 
         if(ot == ObjectType.BULLET)
         {
+            if (Client.instance.bullets.ContainsKey(id)) return;
             GameObject bullet = GameObject.Instantiate(Client.instance.bullet, new Vector2((float)objects[3], (float)objects[4]), Quaternion.Euler(0,0,(float)objects[5]));
             Client.instance.bullets.Add(id, bullet);
             return;
@@ -38,11 +40,13 @@ public class ObjectSpawnPacket : MessagePacket
 
         if(ot == ObjectType.FISH)
         {
-            Debug.Log("Spawning animal");
+            if (Client.instance.animals.ContainsKey(id)) return;
             FistType animalType = (FistType)objects[2];
 
             GameObject animal = GameObject.Instantiate(Client.instance.prefab[(int)animalType], new Vector2((float)objects[3], (float)objects[4]), Quaternion.Euler(0, 0, (float)objects[5]));
-            Client.instance.fishes.Add(id, animal);
+            animal.GetComponent<AnimalHealth>().Id = id;
+            Client.instance.animals.Add(id, animal);
+
 
             return;
         }
@@ -69,6 +73,8 @@ public class ObjectSpawnPacket : MessagePacket
 
     }
 
+
+    
     public override void Write() { }
 
 }

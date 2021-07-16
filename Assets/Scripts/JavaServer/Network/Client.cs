@@ -26,7 +26,7 @@ public class Client : MonoBehaviour
 
     public Dictionary<int, GunController> guns = new Dictionary<int, GunController>();
     public Dictionary<int, GameObject> bullets = new Dictionary<int, GameObject>();
-    public Dictionary<int, GameObject> fishes = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> animals = new Dictionary<int, GameObject>();
     public Dictionary<int, GameObject> objects = new Dictionary<int, GameObject>();
     public Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
 

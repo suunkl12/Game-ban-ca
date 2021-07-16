@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class AnimalHealth : MonoBehaviour
 {
+    private int id;
     public int health;
     public int currentHealth;
     public int score;
     Animator ani;
+
+    public int Id { get => id; set => id = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
         ani = GetComponent<Animator>();
+        StartCoroutine(timeOutDestroyFish(id));
     }
 
     // Update is called once per frame
@@ -43,6 +48,17 @@ public class AnimalHealth : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
+    }
+
+    IEnumerator timeOutDestroyFish(int id)
+    {
+        yield return new WaitForSeconds(40f);
+
+        if (!gameObject.activeSelf) yield break;
+        if (Client.instance.animals.ContainsKey(id)) Client.instance.animals.Remove(id);
+        StartDead();
+        
+
     }
 
 }

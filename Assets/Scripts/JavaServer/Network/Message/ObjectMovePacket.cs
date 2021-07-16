@@ -27,8 +27,8 @@ public class ObjectMovePacket : MessagePacket
                 Client.instance.bullets[id].gameObject.transform.position = new Vector3((float)objects[2], (float)objects[3] ,0);
                 break;
             case ObjectType.FISH:
-                if (!Client.instance.fishes.ContainsKey(id)) return;
-                Client.instance.fishes[id].gameObject.transform.position = new Vector3((float)objects[2], (float)objects[3], 0);
+                if (!Client.instance.animals.ContainsKey(id)) return;
+                Client.instance.animals[id].gameObject.transform.position = new Vector3((float)objects[2], (float)objects[3], 0);
                 break;
         }
     }
